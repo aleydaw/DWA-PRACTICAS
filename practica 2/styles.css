@@ -1,0 +1,160 @@
+:root {
+  --color-fondo: #f8ddef;
+  --color-fondo-2: #ffffff;
+  --color-texto: #8577a3;
+  --color-acento: #b75673;
+  --color-prepa: #b677ce;
+  --color-listo: #6771d1;
+
+  --espaciado: 1.30rem;
+  --radio: 16px;
+
+  --duracion-entrada: 900ms;
+  --duracion-pulso: 2s;
+  --timing: ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 1.5rem;
+}
+
+.pedidos {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--espaciado);
+}
+
+.pedidos__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--espaciado);
+}
+
+.pedidos__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: var(--espaciado);
+  margin-top: var(--espaciado);
+}
+
+.pedido {
+  --color-estado: var(--color-acento);
+  background: var(--color-fondo-2);
+  border-radius: var(--radio);
+  text-align: center;
+  padding: var(--espaciado);
+  position: relative;
+  box-shadow: 0 2px 8px rgba(133, 119, 163, 0.15);
+  animation-name: entrada-pedido;
+  animation-duration: var(--duracion-entrada);
+  animation-timing-function: var(--timing);
+  animation-fill-mode: forwards;
+}
+
+.pedido::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-estado);
+}
+
+.pedido:nth-child(1) {
+  animation-delay: 0s;
+}
+.pedido:nth-child(2) {
+  animation-delay: 0.20s;
+}
+.pedido:nth-child(3) {
+  animation-delay: 0.40s;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+  color: var(--color-acento);
+  margin: 0;
+}
+
+.estado-sistema {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.estado-sistema__punto {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-acento);
+  animation: estado-activo var(--duracion-pulso) ease-in-out infinite;
+}
+
+.pedido__estado {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--color-estado);
+}
+
+.pedido[data-estado="nuevo"] {
+  --color-estado: var(--color-acento);
+  animation: entrada-pedido var(--duracion-entrada) var(--timing) forwards,
+    pulso var(--duracion-pulso) var(--timing) infinite;
+}
+
+.pedido[data-estado="proceso"] {
+  --color-estado: var(--color-prepa);
+}
+
+.pedido[data-estado="listo"] {
+  --color-estado: var(--color-listo);
+}
+
+@keyframes estado-activo {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.20);
+    opacity: 0.65;
+  }
+}
+
+@keyframes entrada-pedido {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulso {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

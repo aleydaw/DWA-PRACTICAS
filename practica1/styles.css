@@ -1,0 +1,383 @@
+/* 
+   CSS COMPONENT LAB — STARTER
+   Objetivo: completar usando contenidos de Clases 2, 5 y 6.
+   La paleta ya está definida para que el esfuerzo se concentre
+   en layout, gradientes e interacción.
+    */
+
+:root {
+  --color-bg: #fcf8ff;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f5f2ff;
+  --color-text: #1b1b24;
+  --color-muted: #464555;
+  --color-primary: #3525cd;
+  --color-primary-2: #4b4dd8;
+  --color-secondary: #006c49;
+  --color-secondary-soft: #6cf8bb;
+  --color-border: #c7c4d8;
+
+  --radius-sm: .5rem;
+  --radius-md: .75rem;
+  --radius-lg: 1rem;
+  --shadow-1: 0 4px 20px rgba(27, 27, 36, .06);
+  --shadow-2: 0 18px 46px rgba(53, 37, 205, .16);
+
+  --container: 1180px;
+  --gap: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.page-shell,
+.topbar,
+.footer {
+  width: min(calc(100% - 48px), var(--container));
+  margin-inline: auto;
+}
+
+/* 
+   BASE VISUAL — NO ES EL OBJETIVO PRINCIPAL DE LA PRÁCTICA
+    */
+
+.topbar {
+  margin-top: 20px;
+  min-height: 72px;
+  padding: 12px 16px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.brand {
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 1.25rem;
+}
+
+.brand span {
+  color: var(--color-primary);
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.intro {
+  padding: 80px 0 64px;
+  max-width: 800px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .76rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  line-height: 1;
+}
+
+.intro h1 span {
+  color: var(--color-primary);
+}
+
+.intro>p:last-child {
+  color: var(--color-muted);
+}
+
+.lab-section {
+  padding: 56px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.section-heading {
+  margin-bottom: 28px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.code-chip {
+  font-family: monospace;
+  font-size: .8rem;
+  padding: 8px 10px;
+  color: var(--color-primary);
+  background: #e2dfff;
+  border-radius: 999px;
+}
+
+/* 
+   RETO 1 — CLASE 2: FLEXBOX
+   1) Convertir .topbar en un contenedor Flex.
+   2) Logo izquierda / navegación derecha.
+   3) Centrar verticalmente.
+   4) Convertir .nav en Flex con gap.
+    */
+
+/* TODO: .topbar { ... } */
+/* TODO: .nav { ... } */
+
+/* 
+   RETO 2 — CLASE 2: CSS GRID + FLEXBOX
+   1) .card-grid debe mostrar 3 columnas iguales en desktop.
+   2) Agregar gap usando --gap.
+   3) .project-card debe ser Flex en columna.
+   4) .card-body debe ser Flex en columna y el enlace quedar
+      al final de la tarjeta.
+    */
+
+.card-grid {
+  /* TODO */
+}
+
+.project-card {
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+  /* TODO: display/flex-direction/transition */
+}
+
+.card-visual {
+  min-height: 190px;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+/* RETO 3 — CLASE 5:
+   convertir estos fondos planos en linear-gradient(). */
+.visual-one {
+  background: var(--color-primary);
+}
+
+.visual-two {
+  background: var(--color-primary-2);
+}
+
+.visual-three {
+  background: var(--color-secondary);
+}
+
+.card-body {
+  padding: 22px;
+  /* TODO: Flexbox */
+}
+
+.card-topline {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: #e2dfff;
+  color: #3323cc;
+  font-size: .72rem;
+  font-weight: 800;
+}
+
+.tag-green {
+  background: #d8ffed;
+  color: #005236;
+}
+
+.card-body p {
+  color: var(--color-muted);
+}
+
+.text-link {
+  text-decoration: none;
+  font-weight: 800;
+  color: var(--color-primary);
+  /* TODO: margin-top: auto; cuando .card-body sea flex */
+}
+
+/* 
+   RETO 3 — CLASE 5: GRADIENTES
+   1) Apilar linear-gradient() + url("assets/banner.svg").
+   2) Hacer que el texto blanco sea legible.
+   3) Crear radial-gradient() en .btn-radial.
+   4) Crear gradiente de 3 colores en .gradient-strip.
+    */
+
+.promo-banner {
+  min-height: 430px;
+  padding: 44px;
+  border-radius: 1.5rem;
+  color: white;
+
+  /* TODO: background-image con 2 capas */
+  background-image: url("assets/banner.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+.promo-content {
+  max-width: 610px;
+}
+
+.promo-banner h3 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 4rem);
+}
+
+.promo-label {
+  color: var(--color-secondary-soft);
+  font-weight: 900;
+}
+
+.gradient-strip {
+  margin-top: 20px;
+  min-height: 62px;
+  padding: 14px 18px;
+  border-radius: var(--radius-lg);
+  color: white;
+  background: var(--color-primary);
+  /* TODO: linear-gradient de 3 colores + Flexbox */
+}
+
+/* 
+   RETO 4 — CLASE 6: TRANSFORM + TRANSITION
+   Reglas:
+   - tarjeta: translateY(-6px) + scale(1.02)
+   - botón: translateY(-2px) + scale(1.03)
+   - usar transition en estado normal
+   - probar ease y ease-in-out
+    */
+
+.project-card:hover {
+  /* TODO */
+}
+
+.btn {
+  border: 0;
+  border-radius: var(--radius-sm);
+  padding: 12px 18px;
+  font: inherit;
+  font-weight: 800;
+  text-decoration: none;
+  display: inline-flex;
+  cursor: pointer;
+  /* TODO: transition */
+}
+
+.btn-small {
+  padding: 9px 14px;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  /* TODO */
+}
+
+.btn-secondary {
+  color: var(--color-primary);
+  background: transparent;
+  border: 1.5px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+  /* TODO */
+}
+
+.btn-radial {
+  color: #0f0069;
+  background: var(--color-secondary-soft);
+  /* TODO: radial-gradient */
+}
+
+.btn-radial:hover {
+  /* TODO */
+}
+
+.interaction-grid {
+  /* TODO: Grid de 3 columnas */
+}
+
+.interaction-panel {
+  min-height: 220px;
+  padding: 24px;
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.mini-card {
+  width: 100%;
+  padding: 16px;
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+  /* TODO: Flexbox + transition */
+}
+
+.mini-card:hover {
+  /* TODO */
+}
+
+.status-dot {
+  display: inline-block;
+  width: 14px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--color-secondary);
+}
+
+/* 
+   RESPONSIVE
+   En <= 680px:
+   - navegación puede apilarse
+   - Grid pasa a 1 columna
+    */
+
+@media (max-width: 680px) {
+
+  .topbar,
+  .page-shell,
+  .footer {
+    width: min(calc(100% - 32px), var(--container));
+  }
+
+  /* TODO: .topbar */
+  /* TODO: .card-grid, .interaction-grid */
+}
+
+.footer {
+  margin-top: 30px;
+  margin-bottom: 46px;
+  padding: 26px 0;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+}

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS Component Lab — Práctica</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">CSS<span>Lab</span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#cards">Tarjetas</a>
+      <a href="#promo">Banner</a>
+      <a href="#interactions">Interacciones</a>
+      <a class="btn btn-primary btn-small" href="#cards">Explorar</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="intro">
+      <p class="eyebrow">Práctica · Clases 2, 5 y 6</p>
+      <h1>Componentes que demuestran <span>CSS real</span></h1>
+      <p>Una hoja de componentes pensada para evaluar Grid, Flexbox, gradientes, transformaciones y transiciones sin construir un sitio completo.</p>
+    </section>
+
+    <section class="lab-section" id="cards">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">01 · Grid + Flexbox</p>
+          <h2>Galería de tarjetas</h2>
+        </div>
+        <span class="code-chip">repeat(3, 1fr)</span>
+      </div>
+
+      <div class="card-grid">
+        <article class="project-card">
+          <div class="card-visual visual-one"><span>UI</span></div>
+          <div class="card-body">
+            <div class="card-topline">
+              <span class="tag">Grid</span>
+              <span class="tag tag-green">Responsive</span>
+            </div>
+            <h3>Dashboard modular</h3>
+            <p>Tarjeta de proyecto con contenido apilado y llamada a la acción alineada al final.</p>
+            <a class="text-link" href="#">Ver componente →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="card-visual visual-two"><span>CSS</span></div>
+          <div class="card-body">
+            <div class="card-topline">
+              <span class="tag">Flexbox</span>
+              <span class="tag tag-green">Layout</span>
+            </div>
+            <h3>Panel de contenido</h3>
+            <p>El exterior pertenece a Grid; el interior de la tarjeta utiliza Flexbox en columna.</p>
+            <a class="text-link" href="#">Ver componente →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="card-visual visual-three"><span>UX</span></div>
+          <div class="card-body">
+            <div class="card-topline">
+              <span class="tag">Hover</span>
+              <span class="tag tag-green">Motion</span>
+            </div>
+            <h3>Tarjeta interactiva</h3>
+            <p>Al pasar el cursor se eleva, aumenta ligeramente de tamaño y profundiza la sombra.</p>
+            <a class="text-link" href="#">Ver componente →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="lab-section" id="promo">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">02 · Gradientes</p>
+          <h2>Banner promocional</h2>
+        </div>
+        <span class="code-chip">linear-gradient()</span>
+      </div>
+
+      <article class="promo-banner">
+        <div class="promo-content">
+          <span class="promo-label">Summer Code Fest</span>
+          <h3>Diseña. Construye. Itera.</h3>
+          <p>El texto conserva legibilidad gracias a una capa de gradiente semitransparente sobre la imagen.</p>
+          <a class="btn btn-radial" href="#">Explorar reto</a>
+        </div>
+      </article>
+
+      <div class="gradient-strip" aria-label="Gradiente decorativo de tres colores">
+        <span>Deep Indigo</span><span>Slate Blue</span><span>Electric Teal</span>
+      </div>
+    </section>
+
+    <section class="lab-section" id="interactions">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">03 · Transform + Transition</p>
+          <h2>Estados interactivos</h2>
+        </div>
+        <span class="code-chip">ease-in-out</span>
+      </div>
+
+      <div class="interaction-grid">
+        <div class="interaction-panel">
+          <p class="panel-label">Botón principal</p>
+          <button class="btn btn-primary">Guardar cambios</button>
+          <small>Hover: translateY + scale + gradiente</small>
+        </div>
+
+        <div class="interaction-panel">
+          <p class="panel-label">Botón secundario</p>
+          <button class="btn btn-secondary">Ver detalles</button>
+          <small>Hover: cambio de fondo + desplazamiento</small>
+        </div>
+
+        <div class="interaction-panel motion-demo">
+          <p class="panel-label">Micro tarjeta</p>
+          <div class="mini-card">
+            <span class="status-dot"></span>
+            <div><strong>Estado activo</strong><small>Transform + shadow</small></div>
+          </div>
+          <small>Hover: scale(1.02) + translateY(-4px)</small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>CSS Component Lab · Práctica del estudiante</p>
+    <code>Grid · Flexbox · Gradients · Transform · Transition</code>
+  </footer>
+</body>
+</html>
